@@ -28,7 +28,6 @@ function Clock() {
   let session = "PM";
   setInterval(() => {
     let date = new Date();
-
     let hour = date.getHours();
     setHour(hour);
     let minute = date.getMinutes();
@@ -50,26 +49,20 @@ function Clock() {
   if (hours < 12) {
     session = "AM";
   }
-  // if (hours < 10) {
-  //   hours = hours + "0";
-  // }
   hours = hours < 10 ? "0" + hours : hours;
   minutes = minutes < 10 ? "0" + minutes : minutes;
   seconds = seconds < 10 ? "0" + seconds : seconds;
   return (
     <div className="container">
       <div className="hourContainer">
-        <div className="hours">{hours}</div>:
-        <div className="minutes">{minutes}</div>:
+        <div className="hours">{hours + ":"}</div>
+        <div className="minutes">{minutes + ":"}</div>
         <div className="seconds">{seconds}</div>
         <p className="session">{session}</p>
       </div>
       <p className="year">
         {daay},{monthh} {monthDates} {year}
       </p>
-      {/* <div className="day">{days}</div>
-      <div className="month">{months}</div>
-      <div className="monthDate">{monthDates}</div> */}
     </div>
   );
 }
