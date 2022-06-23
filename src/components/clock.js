@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import "./clock.css";
 
 function Clock() {
-  // const [timer, setTimer] = useState();
   const [year, setYear] = useState();
-  const [timer, setTimer] = useState();
   const [hours, setHour] = useState();
   const [minutes, setMinutes] = useState();
   const [seconds, setSeconds] = useState();
