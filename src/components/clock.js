@@ -2,18 +2,33 @@ import React, { useState } from "react";
 import "./clock.css";
 
 function Clock() {
-  const [year, setYear] = useState();
-  const [hours, setHour] = useState();
-  const [minutes, setMinutes] = useState();
-  const [seconds, setSeconds] = useState();
-  const [days, setDays] = useState();
-  const [months, setMonths] = useState();
-  const [monthDates, setMonthDate] = useState();
+  const monthList = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const dayList = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
+  let [year, setYear] = useState();
+  let [hours, setHour] = useState();
+  let [minutes, setMinutes] = useState();
+  let [seconds, setSeconds] = useState();
+  let [days, setDays] = useState();
+  let [months, setMonths] = useState();
+  let [monthDates, setMonthDate] = useState();
+  let session = "PM";
   setInterval(() => {
     let date = new Date();
-    let year = date.getFullYear();
-    setYear(year);
+
     let hour = date.getHours();
     setHour(hour);
     let minute = date.getMinutes();
@@ -26,17 +41,35 @@ function Clock() {
     setMonths(month);
     let monthDate = date.getDate();
     setMonthDate(monthDate);
+    let year = date.getFullYear();
+    setYear(year);
   });
+  let daay = dayList[days];
+  let monthh = monthList[months];
 
+  if (hours < 12) {
+    session = "AM";
+  }
+  // if (hours < 10) {
+  //   hours = hours + "0";
+  // }
+  hours = hours < 10 ? "0" + hours : hours;
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+  seconds = seconds < 10 ? "0" + seconds : seconds;
   return (
     <div className="container">
-      <p className="year">{year}</p>
-      <div className="hours">{hours}</div>
-      <div className="minutes">{minutes}</div>
-      <div className="second">{seconds}</div>
-      <div className="day">{days}</div>
+      <div className="hourContainer">
+        <div className="hours">{hours}</div>:
+        <div className="minutes">{minutes}</div>:
+        <div className="seconds">{seconds}</div>
+        <p className="session">{session}</p>
+      </div>
+      <p className="year">
+        {daay},{monthh} {monthDates} {year}
+      </p>
+      {/* <div className="day">{days}</div>
       <div className="month">{months}</div>
-      <div className="monthDate">{monthDates}</div>
+      <div className="monthDate">{monthDates}</div> */}
     </div>
   );
 }
