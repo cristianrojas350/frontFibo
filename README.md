@@ -3,7 +3,7 @@
 ## Objective
 
 - Build a Digital Clock web site using ReactJS.
-- 
+
 ## Description
 
 - Remake of the javaScript digital clock project with React
