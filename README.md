@@ -44,7 +44,7 @@ SOLUTION
 - ReactJS
 
 ```
-$ git clone https://github.com/esadakman/react-digital-clock.git
+$ git clone https://github.com/esadakman/reactjs-digital-clock.git
 $ cd ../react-digital-clock
 $ npm install / yarn
 $ npm start / yarn start
