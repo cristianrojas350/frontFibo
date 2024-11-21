@@ -1,3 +1,15 @@
 .App {
   text-align: center;
+  font-family: 'Roboto', sans-serif;
+  margin: 20px;
+}
+
+.fibonacci-generator {
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 40px;
+  font-size: 2rem;
+  color: #333;
 }
